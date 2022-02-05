@@ -1,0 +1,236 @@
+$primary-color: #97ae76;
+$color-1: #fff;
+$color-2: #333;
+$color-3: #666;
+$color-4: #999;
+$color-5: #ccc;
+$color-6: #7e975a;
+
+.shop-details {
+  padding-bottom: 4rem;
+}
+
+.shop-details__banner {
+  background: url(../images/shopdetail_bg.jpg) no-repeat center/cover;
+}
+
+.shop-details__product {
+  display: flex;
+  padding: 4rem 15%;
+}
+
+.shop-details__product-image,
+.shop-details__product-description {
+  flex-basis: 50%;
+}
+
+// product-image
+.shop-details__product-image {
+  display: flex;
+  flex-direction: column;
+  padding-right: 2rem;
+}
+
+.shop-details__product-image__mainImg {
+  img {
+    width: 100%;
+  }
+}
+
+.shop-details__product-image__subImg {
+  display: flex;
+  justify-content: space-around;
+}
+
+.shop-details__product-image__subImg-items {
+  flex-basis: 30%;
+  border: 1px solid $color-5;
+
+  img {
+    width: 100%;
+  }
+}
+
+// product-description
+.shop-details__product-description-title {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid $color-5;
+}
+
+.shop-details__product-description-title_name {
+  h3 {
+    font-size: 2.8rem;
+  }
+}
+
+.shop-details__product-description-title_cost {
+  p {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+}
+
+.shop-details__product-description-context {
+  padding: 2.4rem 0;
+  p {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+  }
+}
+
+.shop-details__product-description-cart {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid $color-5;
+}
+
+.shop-details__product-description-cart-quantity {
+  height: 40px;
+
+  input {
+    height: 100%;
+    width: 40px;
+    font-size: 1.6rem;
+    border: 1px solid $primary-color;
+    color: $color-3;
+  }
+
+  input.quantityNumber {
+    width: 60px;
+    margin: -2px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    padding: 0 10px;
+    outline: none;
+  }
+
+  input.minusProduct,
+  input.plusProduct {
+    background-color: #fff;
+  }
+
+  input.minusProduct:hover,
+  input.plusProduct:hover {
+    color: $color-1;
+    background-color: $primary-color;
+  }
+}
+
+.shop-details__product-description-cart-buttonFunc {
+  padding-top: 1rem;
+  display: flex;
+}
+
+.shop-details__product-description-cart-addCart {
+  color: $color-1;
+  background-color: $primary-color;
+  button {
+    font-size: 1.1rem;
+    padding: 1.2rem 2.4rem;
+    border: none;
+    color: $color-1;
+    background-color: $primary-color;
+  }
+}
+
+.shop-details__product-description-cart-addWishList {
+  margin-left: 1rem;
+
+  button {
+    padding: 0.9rem 2.4rem;
+    border: 1px solid $primary-color;
+    color: $color-1;
+    background-color: $primary-color;
+
+    i {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.shop-details__product-description-cart-addCart button:hover,
+.shop-details__product-description-cart-addWishList button:hover,
+input.minusProduct:hover,
+input.plusProduct:hover {
+  cursor: pointer;
+}
+
+.shop-details__product-description-tags {
+  padding: 2rem 0;
+  border-bottom: 1px solid $color-5;
+
+  p {
+    font-size: 1.2rem;
+    padding: 0.6rem 0;
+
+    a {
+      color: $primary-color;
+    }
+  }
+}
+
+.shop-details__product-description-socialMedia {
+  padding: 2rem 0;
+
+  i {
+    font-size: 1.4rem;
+    font-weight: normal;
+    display: inline-block;
+    padding: 0 0.6rem;
+  }
+
+  i:hover {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
+
+// commerce
+.shop-details__commerce {
+  padding: 2rem 25%;
+}
+
+.shop-details__commerce-tabs {
+  display: flex;
+  position: relative;
+  color: $color-2;
+  margin-left: 10rem;
+}
+
+.active-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: $primary-color;
+  transition: all 0.2s ease;
+}
+
+.shop-details__commerce-tabs--items {
+  padding: 1.6rem 2.4rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  h3 {
+    font-size: 1.4rem;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+  }
+}
+
+.shop-details__commerce-panes {
+  margin-top: 2rem;
+}
+
+.shop-details__commerce-panes--items {
+  display: none;
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+
+.show {
+  display: block;
+}

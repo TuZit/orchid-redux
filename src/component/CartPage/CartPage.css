@@ -1,0 +1,136 @@
+.cart-page__table {
+  padding: 6rem 10%;
+  width: 100%;
+}
+.cart-page__table th,
+.cart-page__table td {
+  width: 14.2857142857%;
+}
+
+.cart-page__table-conainer {
+  border-bottom: 1px solid #cccccc;
+  color: #333;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.cart-page__table-conainer thead {
+  background-color: #d2ffea;
+}
+.cart-page__table-conainer thead th {
+  padding: 1.8rem 3rem;
+  font-size: 1.2rem;
+}
+.cart-page__table-conainer tbody {
+  border: 1px solid #cccccc;
+  border-top: 0;
+}
+.cart-page__table-conainer tbody tr {
+  border: 1px solid #cccccc;
+  border-top: 0;
+}
+.cart-page__table-conainer tbody td {
+  padding: 4rem 3rem;
+}
+.cart-page__table-conainer tbody td img {
+  width: 102px;
+  height: 86px;
+  border: 1px solid #cccccc;
+}
+.cart-page__table-conainer tbody input {
+  width: 90px;
+  height: 35px;
+  border: 1px solid #97ae76;
+  border-radius: 20px;
+  text-align: center;
+}
+.cart-page__table-conainer tfoot {
+  border: 1px solid #cccccc;
+  border-top: 0;
+}
+
+.cart-coupon {
+  text-align-last: left;
+  padding: 2rem 0;
+}
+.cart-coupon input {
+  text-align: center;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  outline: none;
+  display: inline-block;
+  margin: 0 2.6rem;
+  padding: 1rem 1rem;
+}
+.cart-coupon button {
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #97ae76;
+  padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: 2rem;
+  border: none;
+}
+.cart-coupon button:hover {
+  background-color: #7e975a;
+  cursor: pointer;
+}
+
+td.cart-remove {
+  padding: 2rem;
+}
+td.cart-remove a {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  background-color: #97ae76;
+  text-align: center;
+  color: #fff;
+}
+td.cart-remove a:hover {
+  background-color: #d9534f;
+}
+
+td.cart-name {
+  font-size: 1.6rem;
+}
+
+.cart-page__total {
+  padding: 0 10% 6rem;
+}
+
+.cart-page__total-container {
+  width: 66%;
+}
+.cart-page__total-container h3 {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+.cart-page__total-container button {
+  font-size: 1.2rem;
+  padding: 1.2rem 2rem;
+  margin-top: 1.4rem;
+}
+
+.cart-page__total-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.cart-page__total-table table th,
+.cart-page__total-table table td {
+  padding: 1.6rem 3rem;
+  font-size: 1.4rem;
+  width: 50%;
+  text-align-last: left;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+.cart-page__total-table table th {
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+}

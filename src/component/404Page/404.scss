@@ -1,0 +1,38 @@
+$primary-color: #97ae76;
+$color-1: #fff;
+$color-2: #333;
+$color-3: #666;
+$color-4: #999;
+$color-5: #ccc;
+$color-6: #7e975a;
+
+#error-page {
+  text-align: center;
+  padding-bottom: 8rem;
+
+  h1 {
+    font-size: 20rem;
+    font-family: "Roboto", sans-serif;
+    margin: 6rem 0 4rem;
+  }
+
+  p,
+  button {
+    font-size: 2rem;
+  }
+
+  p {
+    margin: 0 auto;
+    padding-bottom: 6rem;
+    color: $color-2;
+  }
+}
+
+.error-page__line {
+  max-width: 500px;
+  margin: 0 auto 5rem auto;
+  border: 0;
+  height: 1.6px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
