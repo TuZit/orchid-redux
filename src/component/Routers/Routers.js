@@ -9,6 +9,7 @@ import Home from "../Home/Home";
 import ShopDetail from "../ShopDetail/ShopDetail";
 import ShopPage from "../ShopPage/ShopPage";
 import Login from "../Login/Login";
+import Shop from "../Shop/Shop";
 
 function Routers({
   productItems,
@@ -28,7 +29,7 @@ function Routers({
         <Route
           path="/shop"
           element={
-            <ShopPage
+            <Shop
               productItems={productItems}
               handleAddProduct={handleAddProduct}
               cartItems={cartItems}

@@ -101,19 +101,25 @@ $color-6: #7e975a;
 
 td.cart-remove {
   padding: 2rem;
-  a {
+  button {
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     line-height: 2rem;
     border-radius: 50%;
     background-color: $primary-color;
     text-align: center;
     color: $color-1;
-  }
+    border: none;
+    cursor: pointer;
 
-  a:hover {
-    background-color: #d9534f;
+    &:first-child {
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: #d9534f;
+    }
   }
 }
 

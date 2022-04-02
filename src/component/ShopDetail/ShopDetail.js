@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-// import data from "../data/data.json";
+import data from "../data/data.json";
 
 import "./ShopDetail.scss";
 

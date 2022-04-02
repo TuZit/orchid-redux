@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Avatar, StyledBadge } from "@mui/material";
 
 function Header() {
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   return (
     <div className="header">
       <div className="header__logo">
@@ -34,8 +37,14 @@ function Header() {
         </Link>
         <Link to="/cart">
           <i className="ti-shopping-cart" />
-          {/* <span>5</span> */}
+          <span>{totalQuantity}</span>
         </Link>
+        {/* 
+        <Avatar
+          alt="avatar"
+          src="./images.avatar.jpg"
+          className="header__cart-avatar"
+        /> */}
       </div>
     </div>
   );

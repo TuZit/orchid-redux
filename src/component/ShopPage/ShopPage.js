@@ -1,10 +1,12 @@
 import { useEffect, useState, useRef } from "react";
-import Slider from "react-slick";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import "./ShopPage.scss";
 import "./ShopDetail.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Navigation } from "swiper";
 
 function ShopPage({ productItems, cartItems, handleAddProduct }) {
   // show/hide subcontent
@@ -40,7 +42,7 @@ function ShopPage({ productItems, cartItems, handleAddProduct }) {
   const meats = productItems.filter((item, index) => {
     return item.category === "meat" ? item : "";
   });
-
+  console.log(meats);
   return (
     <div>
       <div id="shop-page">
@@ -50,41 +52,6 @@ function ShopPage({ productItems, cartItems, handleAddProduct }) {
         </div>
         <div className="shop-page__category">
           <div className="shop-page__wrapper">
-            {/* <div className="shop-page__wrap-items">
-              <div className="shop-thumbnail">
-                <img src="./images/shop/thumb-1.jpg" alt="" />
-              </div>
-
-              <div className="shop-outer-products">
-                <h3>Vegetable</h3>
-                <div className="shop-inner-products">
-                  
-                    {fruits.map((vege, index) => (
-                      <div className="shop-inner-products__items" key={index}>
-                        <div className="inner-img-wrap">
-                          <div className="inner-options">
-                            <button className="inner-options__details">
-                              <i className="ti-eye" />
-                            </button>
-                            <button
-                              className="inner-options__add-cart"
-                              onClick={() => handleAddProduct()}
-                            >
-                              <i className="ti-shopping-cart" />
-                            </button>
-                          </div>
-                          <img src={vege.thumbnailUrl} alt={vege.name} />
-                        </div>
-
-                        <div className="inner-desc-text">
-                          <h4>{vege.name}</h4>
-                          <p>${vege.price}</p>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            </div> */}
             <div className="shop-page__wrap-items">
               <div className="shop-thumbnail">
                 <img src="./images/shop/thumb-1.jpg" alt="" />

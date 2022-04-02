@@ -1,6 +1,12 @@
+import { useSelector } from "react-redux";
+import CartItem from "./CartItem.jsx";
 import "./CartPage.scss";
 
 function CartPage() {
+  let total = 0;
+  const cartItems = useSelector((state) => state.cart.itemList);
+  cartItems.forEach((item) => (total += item.totalPrice));
+
   return (
     <div className="cart-page">
       <div className="cart-page__table">
@@ -17,36 +23,18 @@ function CartPage() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td id="cart-thumbnail">
-                <img src="./images/products/lettuce.jpg" alt="lecttuce" />
-              </td>
-              <td id="cart-name">Salad</td>
-              <td id="cart-weight">0.4 kg</td>
-              <td id="cart-quantity">
-                <input type="number" defaultValue={1} />
-              </td>
-              <td id="cart-price">$2.26</td>
-              <td id="cart-subtotal">$2.26</td>
-              <td className="cart-remove">
-                <a href="true">x</a>
-              </td>
-            </tr>
-            <tr>
-              <td id="cart-thumbnail">
-                <img src="./images/products/tomato.jpg" alt="tomato" />
-              </td>
-              <td id="cart-name">Tomato</td>
-              <td id="cart-weight">0.4 kg</td>
-              <td id="cart-quantity">
-                <input type="number" defaultValue={1} size={4} />
-              </td>
-              <td id="cart-price">$2.26</td>
-              <td id="cart-subtotal">$2.26</td>
-              <td className="cart-remove">
-                <a href="true">x</a>
-              </td>
-            </tr>
+            {cartItems.map((item, index) => (
+              <CartItem
+                key={item.id}
+                id={item.id}
+                price={item.price}
+                name={item.name}
+                total={item.totalPrice}
+                quantity={item.quantity}
+                thumbnailUrl={item.thumbnailUrl}
+                weight={item.weight}
+              />
+            ))}
           </tbody>
           <tfoot>
             <tr>
@@ -67,12 +55,8 @@ function CartPage() {
             <table>
               <tbody>
                 <tr>
-                  <th>Subtotal</th>
-                  <td>$6.31</td>
-                </tr>
-                <tr>
                   <th>Total</th>
-                  <td>$6.31</td>
+                  <td>${total}</td>
                 </tr>
               </tbody>
             </table>
