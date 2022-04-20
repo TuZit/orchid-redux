@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "name": "admins",
+      "email": "admin@gmail.comk",
+      "password": "admink",
+      "acceptTerms": true,
+      "id": 1
+    },
+    {
+      "name": "thanh hang",
+      "acceptTerms": true,
+      "email": "thanhhang@gmail.com",
+      "password": "thanhhang",
+      "id": 2
+    },
+    {
+      "name": "tuan",
+      "email": "tuantuan@gmail.com",
+      "password": "dfdfkjhfdj2@",
+      "acceptTerms": true,
+      "id": 3
+    },
+    {
+      "name": "Tutu",
+      "email": "papa@gmail.com",
+      "password": "thutungay13@",
+      "acceptTerms": true,
+      "id": 4
+    },
+    {
+      "name": "Thanh thanh",
+      "email": "thanhthanh@gmail.com",
+      "password": "thanhthanh1@",
+      "acceptTerms": true,
+      "id": 5
+    }
+  ]
+}
