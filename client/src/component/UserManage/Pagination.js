@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from "react";
-import ReactPaginate from "react-paginate";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import ReactPaginate from 'react-paginate';
+import axios from 'axios';
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
+import 'swiper/css/free-mode';
+import 'swiper/css/thumbs';
 
-import { Autoplay, Pagination, Navigation, Thumbs, FreeMode } from "swiper";
+import { Autoplay, Pagination, Navigation, Thumbs, FreeMode } from 'swiper';
 
-import "./Pagi.scss";
-import "../Shop/shop.scss";
+import './Pagi.scss';
+import '../Shop/shop.scss';
+import { useContext } from 'react';
+import { ProductsContext } from '../../ProductContext.js';
 
-function Pagi({ productItems }) {
+function Pagi() {
+  const productItems = useContext(ProductsContext);
   const [data, setData] = useState();
-
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
       try {
         const res = await axios.get(
-          "https://jsonplaceholder.typicode.com/todos"
+          'https://jsonplaceholder.typicode.com/todos'
         );
         setData(res.data);
       } catch (err) {
@@ -57,22 +58,22 @@ function Pagi({ productItems }) {
           data
             .slice(pagesVisited, pagesVisited + usersPerPage)
             .map((item, i) => (
-              <div key={i} style={{ fontSize: "18px", padding: "20px" }}>
+              <div key={i} style={{ fontSize: '18px', padding: '20px' }}>
                 <p>{item.id}</p>
                 <p>{item.title}</p>
               </div>
             ))}
 
         <ReactPaginate
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
+          previousLabel={'Previous'}
+          nextLabel={'Next'}
           pageCount={pageCount}
           onPageChange={changePage}
-          containerClassName={"paginationBttns"}
-          previousLinkClassName={"previousBttn"}
-          nextLinkClassName={"nextBttn"}
-          disabledClassName={"paginationDisabled"}
-          activeClassName={"paginationActive"}
+          containerClassName={'paginationBttns'}
+          previousLinkClassName={'previousBttn'}
+          nextLinkClassName={'nextBttn'}
+          disabledClassName={'paginationDisabled'}
+          activeClassName={'paginationActive'}
         />
       </div>
 
@@ -90,27 +91,26 @@ function Pagi({ productItems }) {
           navigation={true}
           modules={[Autoplay, Pagination, Navigation, FreeMode, Thumbs]}
           loop={true}
-          thumbs={{ swiper: thumbsSwiper }}
-          className="mySwiper"
+          className='mySwiper'
         >
           {productItems.map((item, i) => (
             <SwiperSlide key={i}>
-              <div className="shop-inner-products__items">
-                <div className="inner-img-wrap">
-                  <div className="inner-options">
-                    <button to="#" className="inner-options__details">
-                      <i className="ti-eye" />
+              <div className='shop-inner-products__items'>
+                <div className='inner-img-wrap'>
+                  <div className='inner-options'>
+                    <button to='#' className='inner-options__details'>
+                      <i className='ti-eye' />
                     </button>
                     <button
-                      className="inner-options__add-cart"
+                      className='inner-options__add-cart'
                       // onClick={handleAddProduct}
                     >
-                      <i className="ti-shopping-cart" />
+                      <i className='ti-shopping-cart' />
                     </button>
                   </div>
                   <img src={item.thumbnailUrl} alt={item.name} />
                 </div>
-                <div className="inner-desc-text">
+                <div className='inner-desc-text'>
                   <h4>{item.name}</h4>
                   <p>${item.price}</p>
                 </div>

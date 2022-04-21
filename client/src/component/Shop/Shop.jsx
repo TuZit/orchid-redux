@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from 'react';
 
-import data from "../data/data.json";
-import "./shop.scss";
-import Product from "./Product.jsx";
+// import data from '../data/data.json';
+import './shop.scss';
+import Product from './Product.jsx';
+import { ProductsContext } from '../../ProductContext.js';
 
-const { productItems } = data;
+// const { productItems } = data;
 
 function Shop({ name, id, price }) {
+  const productItems = useContext(ProductsContext);
   const [data, setData] = useState();
   const [filter, setFilter] = useState(data);
 
@@ -22,18 +24,18 @@ function Shop({ name, id, price }) {
   };
 
   return (
-    <div id="shop">
-      <div className="shop-container">
-        <div className="shop-left">
+    <div id='shop'>
+      <div className='shop-container'>
+        <div className='shop-left'>
           <h3>Categories</h3>
           <ul>
             <li onClick={() => setFilter(productItems)}>All</li>
-            <li onClick={() => filterProducts("vegetable")}>Vegetables</li>
-            <li onClick={() => filterProducts("fruit")}>Fruits</li>
-            <li onClick={() => filterProducts("meat")}>Meats</li>
+            <li onClick={() => filterProducts('vegetable')}>Vegetables</li>
+            <li onClick={() => filterProducts('fruit')}>Fruits</li>
+            <li onClick={() => filterProducts('meat')}>Meats</li>
           </ul>
         </div>
-        <div className="shop-right">
+        <div className='shop-right'>
           {filter &&
             filter.map((item, index) => (
               <Product
